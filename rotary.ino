@@ -1,10 +1,4 @@
 #include <LiquidCrystal.h>
-
-/*     Arduino Rotary Encoder Tutorial
- *      
- *  by Dejan Nedelkovski, www.HowToMechatronics.com
- *  
- */
  const int rs = 8, en = 9, d4 = 10, d5 = 11, d6 = 12, d7 = 13;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
  #define outputA 7
@@ -52,7 +46,7 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
      if (millis() - lstMillisec >= 200)
      {
       lcd.clear();
-      FRS = (abs(counter - lstCounter) / 40)*5;
+      FRS = (abs(counter - lstCounter) / 40.0)*5.0;
       lcd.print(String("R/S: ") + FRS); 
       ifTrue = true;
       
